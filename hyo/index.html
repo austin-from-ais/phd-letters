@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Letter Notes for Hyo Kang</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; the dated record is the centre of the page, framing sits around it. */
+:root {
+  --bg: #f4f6f7; --surface: #ffffff; --ink: #17202a; --muted: #586572; --rule: #d3dbe1;
+  --accent: #0f5c6e; --accent-soft: #e0edf0; --due: #8f4300;
+  --draft-bg: #fff5d2; --draft-ink: #5f4a00; --draft-rule: #d9bf63;
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+    --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+    --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+  --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+  --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body);
+  font-size: 1.0625rem; line-height: 1.6;
+  padding-block: 2.5rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 46rem; margin-inline: auto; display: flex; flex-direction: column; gap: 2.75rem; }
+header, section { display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
+h2 { font-size: 1.4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p, ul, ol { margin: 0; }
+p, li { max-width: 65ch; }
+ul, ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.back { align-self: flex-start; font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.35rem 0.7rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+.back:hover { border-color: var(--accent); }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.15rem; }
+
+.record { list-style: none; padding: 0; gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.record li { max-width: none; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding: 0.9rem 1rem; border-top: 1px solid var(--rule); }
+.record li:first-child { border-top: 0; }
+.record .when { font-family: var(--display); font-weight: 600; color: var(--due); font-variant-numeric: tabular-nums; }
+.record .what { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+@media (max-width: 640px) { .record li { grid-template-columns: 1fr; gap: 0.2rem; } }
+
+.points { list-style: none; padding: 0; gap: 1.25rem; }
+.points li { max-width: none; display: flex; flex-direction: column; gap: 0.3rem; }
+
+.draft { background: var(--draft-bg); color: var(--draft-ink); border: 1px dashed var(--draft-rule); border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.92rem; max-width: none; }
+.draft::before { content: "Draft note for Austin: "; font-weight: 600; }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="back" href="../">&larr; Back to the main page</a>
+  <p class="eyebrow">For Hyo Kang, from Austin</p>
+  <h1>Notes for your letter</h1>
+  <p class="lede">You have been my closest collaborator since I was a master's student, and most of what I know about research I learned from you. This page puts the record in one place and says which questions a committee is most likely to bring to your letter.</p>
+  <p>The letter is yours and should say what you think. Nothing here is wording to use.</p>
+</header>
+
+<section>
+  <h2>What your letter covers that the others cannot</h2>
+  <p>Nigel Newbutt is writing about the work with autistic adults and the project I led with the Massachusetts networks. Tim DiFato is writing about my teaching and what I have contributed to the Digital Worlds Institute. You have seen the research from the inside, from the start.</p>
+  <ul class="points">
+    <li>
+      <h3>That we designed the work together</h3>
+      <p>I am second or third author on most of our papers, and a committee cannot tell from an author list that the projects and the research programs around them were designed jointly. You can say which ideas, designs and decisions were mine.</p>
+    </li>
+    <li>
+      <h3>That I can run a lab</h3>
+      <p>You have watched me lead students, organize several teams on XR projects, keep regular updates going, and manage relationships between lab groups and stakeholders across campus. For a committee asking whether I can carry a doctoral project, that is direct evidence.</p>
+    </li>
+    <li>
+      <h3>How far I have come</h3>
+      <p>You taught me and have watched the whole development, from a first-year master's student to now. No one else can describe that arc or say what it suggests about the next five years.</p>
+    </li>
+    <li>
+      <h3>The direction I want to take in a PhD</h3>
+      <p>My statement proposes building a model of the learner from headset data, with a language model reasoning over it. The tutoring system and eye-tracking work we are doing now is the start of that. You can say the direction is real and already under way.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>The record</h2>
+  <ul class="record">
+    <li>
+      <span class="when">2019 – 2022</span>
+      <span class="what">
+        <span>MA in Digital Arts and Sciences at the Digital Worlds Institute, where you taught and mentored me.</span>
+        <span>HoloKeys: Interactive Piano Education Using Augmented Reality and IoT. Stanbury, Said and Kang, VRST 2021. I was first author and principal investigator on the College of the Arts grant that funded it.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2023</span>
+      <span class="what">
+        <span>Immersive Climate Narratives: Using Extended Reality to Raise Climate Change Awareness. Said, Stanbury, Delhagen and Kang, VRST 2023.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2024 – now</span>
+      <span class="what">
+        <span>Three UF awards on which I have been technical lead for VR production: SCALE microelectronics workforce development (DoD, PI Asadi, you as co-PI), Adaptive Contextual Learning in Microelectronics (NSF 2523924, you as PI), and PATHS (NSF 2346819, you as PI). We designed the projects and the research programs around them together.</span>
+        <span>Four papers from the microelectronics work: CHI Extended Abstracts 2025, CSCW Companion 2025, the scoping review in Computers and Education: Artificial Intelligence (2025), and the full paper at CHI 2026.</span>
+        <span>In the lab I have led students and organized several teams on XR projects, run the regular updates, and managed the relationships between lab groups and stakeholders on campus.</span>
+        <span>PATHS: I built the VR training software and we launched it to the public together, with the first cohort in summer 2026.</span>
+        <span>Beyond the papers we have made videos, run many in-person sessions and done interviews together. We travelled together to IEEE PAINE at NASA Marshall in 2024 to demonstrate the work, and you sent me to present the XR training demo at SCALE-Con in Washington, DC, in 2026.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">Aug 2026 – now</span>
+      <span class="what">
+        <span>XR Research and Development Associate in your group, on NSF-funded XR learning research.</span>
+        <span>XR training software for an industrial X-ray microscope, using a vision-language model with headset scene understanding to give procedural guidance on the instrument.</span>
+        <span>An in-situ XR tutoring system that links students' in-class test performance to a learner model the headset can use.</span>
+        <span>With Dr. Pavlo Antonenko, tying eye-tracking data to student performance on the training simulations.</span>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Where your judgment counts most</h2>
+  <ul>
+    <li>A comparison with the doctoral students you have supervised. Stanford's form asks for this directly, as a rating against a group you name.</li>
+    <li>One or two specific contributions: an idea, a design decision or a piece of analysis that was mine and changed how a project or a paper turned out.</li>
+    <li>A moment when you saw me lead: a team I organized, a problem between groups that I sorted out, a student I brought along.</li>
+    <li>Why a PhD now, given that I already work in your group. What doctoral training would give me that our collaboration cannot.</li>
+    <li>Stanford's prompt is a fair checklist for every school: potential for advanced study, intellectual independence, analytical thinking, clear expression, and teaching potential.</li>
+  </ul>
+</section>
+
+<footer>
+  <p><a class="back" href="../">&larr; Back to the main page</a></p>
+  <p>The deadlines, what each school's form asks, and my papers are on <a href="../">the page for all three writers</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>

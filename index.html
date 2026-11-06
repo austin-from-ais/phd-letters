@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Stanbury Letter Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; a date rail up top carries the deadlines, the table carries the per-school detail. */
+:root {
+  --bg: #f4f6f7; --surface: #ffffff; --ink: #17202a; --muted: #586572; --rule: #d3dbe1;
+  --accent: #0f5c6e; --accent-soft: #e0edf0; --due: #8f4300;
+  --draft-bg: #fff5d2; --draft-ink: #5f4a00; --draft-rule: #d9bf63;
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+    --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+    --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+  --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+  --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body);
+  font-size: 1.0625rem; line-height: 1.6;
+  padding-block: 2.5rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 46rem; margin-inline: auto; display: flex; flex-direction: column; gap: 2.75rem; }
+header, section { display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
+h2 { font-size: 1.4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p, ul, ol { margin: 0; }
+p, li { max-width: 65ch; }
+ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.15rem; color: var(--ink); }
+.muted { color: var(--muted); }
+
+/* Writer cards */
+.writers { display: flex; flex-direction: column; gap: 0.6rem; }
+.writers-hint { font-weight: 600; }
+.writer-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+.writer { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; padding: 1rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; color: var(--ink); text-decoration: none; }
+.writer:hover { border-color: var(--accent); }
+.writer-name { font-family: var(--display); font-weight: 600; font-size: 1.3rem; line-height: 1.2; }
+.writer-lane { color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
+.writer-go { margin-top: auto; padding-top: 0.5rem; color: var(--accent); font-size: 0.88rem; font-weight: 600; }
+.writer:hover .writer-go { text-decoration: underline; }
+@media (max-width: 640px) { .writer-cards { grid-template-columns: 1fr; } }
+
+/* Date rail */
+.rail { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.rail li { max-width: none; padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.15rem; border-left: 1px solid var(--rule); min-width: 0; }
+.rail li:first-child { border-left: 0; }
+.rail .date { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--due); font-variant-numeric: tabular-nums; }
+.rail .who { font-size: 0.9rem; }
+.rail .left { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; min-height: 1.2em; }
+@media (max-width: 640px) {
+  .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rail li:nth-child(3) { border-left: 0; }
+  .rail li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* Programs table */
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem; border-top: 1px solid var(--rule); }
+thead th { border-top: 0; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--accent-soft); }
+td.due { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--due); }
+td .school { font-weight: 600; display: block; }
+td .prog { color: var(--muted); display: block; }
+td .from { color: var(--muted); font-size: 0.88rem; display: block; margin-top: 0.25rem; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .table-wrap { border: 0; background: none; overflow: visible; }
+  table, tbody, tr, td { display: block; }
+  thead { display: none; }
+  tr { border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); padding: 0.8rem 0.9rem; }
+  tbody { display: flex; flex-direction: column; gap: 0.75rem; }
+  td { border: 0; padding: 0.15rem 0; }
+  td.due { white-space: normal; }
+}
+
+.lanes { list-style: none; padding: 0; gap: 0; border-top: 1px solid var(--rule); }
+.lanes li { max-width: none; display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); }
+.lanes .name { font-weight: 600; }
+@media (max-width: 640px) { .lanes li { grid-template-columns: 1fr; gap: 0.2rem; } }
+
+.refs { list-style: none; padding: 0; gap: 0.8rem; font-size: 0.97rem; }
+.refs .venue { color: var(--muted); }
+
+.draft { background: var(--draft-bg); color: var(--draft-ink); border: 1px dashed var(--draft-rule); border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.92rem; max-width: none; }
+.draft::before { content: "Draft note for Austin: "; font-weight: 600; }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <p class="eyebrow">PhD applications, Fall 2027 entry</p>
+  <h1>Letters of recommendation for Austin Stanbury</h1>
+  <p class="lede">Thank you for agreeing to write for me. This page keeps everything in one place: what each school will ask of you and when, what I am applying to do, and the materials that may help. I will keep it current as things change.</p>
+
+  <nav class="writers" aria-label="Pages for each letter writer">
+    <p class="writers-hint">Start with your name. It opens the notes written for your letter.</p>
+    <div class="writer-cards">
+      <a class="writer" href="hyo/"><span class="writer-name">Hyo Kang</span><span class="writer-lane">The research we have designed and built together since my master's</span><span class="writer-go">Open your page</span></a>
+      <a class="writer" href="nigel/"><span class="writer-name">Nigel Newbutt</span><span class="writer-lane">The work with autistic adults, from Massachusetts to PATHS</span><span class="writer-go">Open your page</span></a>
+      <a class="writer" href="tim/"><span class="writer-name">Tim DiFato</span><span class="writer-lane">Teaching, and what I have contributed to Digital Worlds</span><span class="writer-go">Open your page</span></a>
+    </div>
+  </nav>
+
+  <div class="writers">
+  <p class="writers-hint">Timeline</p>
+  <ol class="rail" aria-label="Letter deadlines">
+    <li><span class="date">Dec 1</span><span class="who">Stanford, Northeastern, Berkeley, USC, NYU</span><span class="left" data-due="2026-12-01"></span></li>
+    <li><span class="date">Dec 15</span><span class="who">MIT</span><span class="left" data-due="2026-12-15"></span></li>
+    <li><span class="date">Dec 16</span><span class="who">UC Santa Barbara</span><span class="left" data-due="2026-12-16"></span></li>
+    <li><span class="date">Jan 6</span><span class="who">UC Santa Cruz</span><span class="left" data-due="2027-01-06"></span></li>
+  </ol>
+  </div>
+</header>
+
+<section>
+  <h2>The short version</h2>
+  <ul>
+    <li>I am applying to eight programs. Five letters are due December 1, 2026. The last is due January 6, 2027.</li>
+    <li>Each school sends you its own email with a personal upload link. There is no shared system, so expect one email per program.</li>
+    <li>One letter can serve every program. Please put it on letterhead, sign it, and save it as a PDF, since two schools require that.</li>
+    <li>Stanford and NYU also ask a few short rating questions in their form. Everywhere else it is an upload.</li>
+    <li>If a link has not arrived when you expect it, check spam first. Several of these systems are filtered by university mail.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Each school, and what it asks of you</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Program</th><th scope="col">Letter due</th><th scope="col">What you do</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="school">Stanford</span><span class="prog">PhD in Communication</span></td>
+          <td class="due">Dec 1, 2026<br>11:59 pm PT</td>
+          <td>Five short questions (how long and in what setting you have known me, an overall rating against a comparison group, and a recommendation), then upload the letter.<span class="from">Email comes from Stanford Graduate Admissions. Stanford does not accept Interfolio.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">Northeastern</span><span class="prog">PhD in Interdisciplinary Design and Media</span></td>
+          <td class="due">Dec 1, 2026</td>
+          <td>Upload the letter. It must be on letterhead and signed.<span class="from">Email comes from Northeastern's admissions portal.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">UC Berkeley</span><span class="prog">PhD in Information Science</span></td>
+          <td class="due">Dec 1, 2026<br>8:59 pm PT</td>
+          <td>Upload the letter.<span class="from">Email comes from gradadm@berkeley.edu, which university mail often filters.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">USC</span><span class="prog">PhD in Media Arts + Practice</span></td>
+          <td class="due">Dec 1, 2026</td>
+          <td>Submitted through SlideRoom, the school's portfolio system.<span class="from">Email comes from SlideRoom.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">NYU Tandon</span><span class="prog">PhD in Human-Centered Technology, Innovation and Design</span></td>
+          <td class="due">Dec 1, 2026</td>
+          <td>An online recommendation form. A letter is optional there; if you attach one, it must be on letterhead and the form must be completed from your university email address.<span class="from">Email comes from NYU Tandon graduate admissions.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">MIT</span><span class="prog">Media Arts and Sciences</span></td>
+          <td class="due">Dec 15, 2026<br>11:59 pm ET</td>
+          <td>Upload the letter. MIT asks writers to speak to research and critical-thinking skills.<span class="from">Email comes from MIT's application system.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">UC Santa Barbara</span><span class="prog">PhD in Media Arts and Technology</span></td>
+          <td class="due">Dec 16, 2026<br>11:59 pm PT</td>
+          <td>Upload the letter.<span class="from">Email comes from gradadmissions@graddiv.ucsb.edu.</span></td>
+        </tr>
+        <tr>
+          <td><span class="school">UC Santa Cruz</span><span class="prog">PhD in Computational Media</span></td>
+          <td class="due">Jan 6, 2027</td>
+          <td>Upload a PDF or paste the text. The ranking questions on the form are optional.<span class="from">Email comes from gradadm@ucsc.edu.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>What I am applying to do</h2>
+  <p>The question I care about is how knowledge gets from the institutions that hold it to the people who need it: how schools, hospitals and cities teach, and what simulation adds as a medium for that teaching.</p>
+  <p>For the past several years I have built XR and AI learning systems with university and clinical partners. These include mixed-reality microelectronics training with the Florida Semiconductor Institute under the US Army's SCALE program, VR vocational and emotional skill-building tools for autistic adults deployed across two Massachusetts health networks, and augmented reality for the City of Bartow and Pinellas County parks.</p>
+  <p>A review I co-authored in 2025 found that XR learning environments record almost nothing about the learner, and that the AI inside them has no access to what the learner is doing. That is the work I want to do in a PhD: build a model of the learner from the sensor data a headset already captures, have a language model reason over it about what would help this person with this task, and keep it open to inspection by instructors.</p>
+  <h3>Why a PhD, and why now</h3>
+  <p>The practice produced the question and cannot answer it. A deployment cannot isolate causes or be checked by a field. I want the methods to run real experiments, to have the work tested by others, and to learn under an advisor. In the long run I want a lab where this work is formalized and passed on.</p>
+</section>
+
+<section>
+  <h2>What committees look for in a letter</h2>
+  <ul>
+    <li>Specific episodes carry more weight than general praise: something you saw me do, and what it showed you.</li>
+    <li>A comparison helps. Where do I stand among the students, instructors or collaborators you have worked with? Stanford's form asks this directly.</li>
+    <li>Stanford's prompt is a fair checklist for every school: potential for advanced study, intellectual independence, analytical thinking, clear expression, and teaching potential.</li>
+    <li>My record is mostly collaborative and applied, so anything you can say from direct experience about my capacity for independent research, and about why doctoral study is the right next step, answers what a committee is most likely to wonder.</li>
+    <li>No school states a length. One to two pages is normal.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Who is writing about what</h2>
+  <p>Three letters read best when each covers different ground. This is the division I have in mind, so nobody has to cover everything.</p>
+  <ul class="lanes">
+    <li><span class="name"><a href="hyo/">Hyo Kang</a></span><span>Research. The projects we have designed together since my master's, and the lab work I have led in her group.</span></li>
+    <li><span class="name"><a href="nigel/">Nigel Newbutt</a></span><span>The work with autistic adults, from the first clinical partnership to PATHS, and the methods he taught me for it.</span></li>
+    <li><span class="name"><a href="tim/">Tim DiFato</a></span><span>The Digital Worlds Institute: my teaching, and what I have contributed to the department as student, instructor and outside partner.</span></li>
+  </ul>
+  <p>Each name opens the page with the specifics for that letter.</p>
+</section>
+
+<section>
+  <h2>Materials</h2>
+  <h3>Papers</h3>
+  <ul class="refs">
+    <li><a href="https://doi.org/10.1145/3772318.3793705">Learning Inside the Chip: A Design-Science Approach to Developing MR Lab and an AI Agent for Conceptual, Procedural, and Spatial Understanding in Microelectronics Education</a><br><span class="venue">Cheon, Stanbury, Arjunamahanthi, Kottur and Kang. CHI 2026.</span></li>
+    <li><a href="https://doi.org/10.1016/j.caeai.2025.100523">Towards contextual-based AI: A scoping review of artificial intelligence in X reality for personalized learning</a><br><span class="venue">Liu, Cheon, Stanbury, Jiao, Xing and Kang. Computers and Education: Artificial Intelligence, 2025.</span></li>
+    <li><a href="https://doi.org/10.1145/3715070.3749276">Virtual Tutors for Science Labs: Exploring the Impact of GPT Integration and 3D Tutor Avatars on Student Engagement and Learning Outcomes</a><br><span class="venue">Cheon, Stanbury, Lam, Xu and Kang. CSCW Companion 2025.</span></li>
+    <li><a href="https://doi.org/10.1145/3706599.3721269">Interactive Learning in Microelectronics Education: Comparing PC and Mixed Reality Approaches for Student Engagement and Visual-Spatial Memory</a><br><span class="venue">Arjunamahanthi, Kottur, Stanbury, Lam, Cheon, Asadizanjani and Kang. CHI Extended Abstracts 2025.</span></li>
+    <li><a href="https://doi.org/10.1145/3611659.3617195">Immersive Climate Narratives: Using Extended Reality to Raise Climate Change Awareness</a><br><span class="venue">Said, Stanbury, Delhagen and Kang. VRST 2023.</span></li>
+    <li><a href="https://doi.org/10.1145/3562939.3565666">Covid Reflections: AR in Public Health Communications</a><br><span class="venue">Said, Stanbury, Delhagen and Winger-Bearskin. VRST 2022.</span></li>
+    <li><a href="https://doi.org/10.1145/3489849.3489921">HoloKeys: Interactive Piano Education Using Augmented Reality and IoT</a><br><span class="venue">Stanbury, Said and Kang. VRST 2021.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p>Questions, or anything that would make this easier: contact me directly and I will sort it out the same day.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var now = new Date();
+  var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  document.querySelectorAll("[data-due]").forEach(function (el) {
+    var p = el.getAttribute("data-due").split("-");
+    var days = Math.round((Date.UTC(+p[0], +p[1] - 1, +p[2]) - today) / 86400000);
+    el.textContent = days > 1 ? "in " + days + " days" : days === 1 ? "tomorrow" : days === 0 ? "today" : "passed";
+  });
+})();
+</script>
+</body>
+</html>

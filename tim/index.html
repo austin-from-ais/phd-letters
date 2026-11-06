@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Letter Notes for Tim DiFato</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; the dated record is the centre of the page, framing sits around it. */
+:root {
+  --bg: #f4f6f7; --surface: #ffffff; --ink: #17202a; --muted: #586572; --rule: #d3dbe1;
+  --accent: #0f5c6e; --accent-soft: #e0edf0; --due: #8f4300;
+  --draft-bg: #fff5d2; --draft-ink: #5f4a00; --draft-rule: #d9bf63;
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+    --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+    --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #19212a; --ink: #e5eaee; --muted: #9ba8b4; --rule: #2c3741;
+  --accent: #72c4d4; --accent-soft: #16323a; --due: #f0b56c;
+  --draft-bg: #372f12; --draft-ink: #f0dc97; --draft-rule: #7d6a26; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body);
+  font-size: 1.0625rem; line-height: 1.6;
+  padding-block: 2.5rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 46rem; margin-inline: auto; display: flex; flex-direction: column; gap: 2.75rem; }
+header, section { display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
+h2 { font-size: 1.4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p, ul { margin: 0; }
+p, li { max-width: 65ch; }
+ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.back { align-self: flex-start; font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.35rem 0.7rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+.back:hover { border-color: var(--accent); }
+.eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.15rem; }
+
+.record { list-style: none; padding: 0; gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.record li { max-width: none; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding: 0.9rem 1rem; border-top: 1px solid var(--rule); }
+.record li:first-child { border-top: 0; }
+.record .when { font-family: var(--display); font-weight: 600; color: var(--due); font-variant-numeric: tabular-nums; }
+.record .what { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+@media (max-width: 640px) { .record li { grid-template-columns: 1fr; gap: 0.2rem; } }
+
+.points { list-style: none; padding: 0; gap: 1.25rem; }
+.points li { max-width: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.points p { color: var(--ink); }
+
+.draft { background: var(--draft-bg); color: var(--draft-ink); border: 1px dashed var(--draft-rule); border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.92rem; max-width: none; }
+.draft::before { content: "Draft note for Austin: "; font-weight: 600; }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="back" href="../">&larr; Back to the main page</a>
+  <p class="eyebrow">For Tim DiFato, from Austin</p>
+  <h1>Notes for your letter</h1>
+  <p class="lede">You have watched me from the institute's side for the whole run: as a student in the program, as an instructor you hired, and as someone working with the department from outside it. This page gathers what you saw, with dates, so you do not have to reconstruct it.</p>
+  <p>The letter is yours and should say what you think. I am also sending you a Word template for the letter, with the facts already filled in and the judgments left open for you.</p>
+</header>
+
+<section>
+  <h2>What your letter covers that the others cannot</h2>
+  <p>Hyo Kang has known me just as long and is writing about the research. Nigel Newbutt is writing about the learning-sciences side and the work with autistic adults. You saw the same years from the institute's side: what I contributed to the department, from inside it and from outside it, over time. That part is yours.</p>
+  <ul class="points">
+    <li>
+      <h3>The trajectory</h3>
+      <p>Student, then instructor, then someone the institute brought back with a larger load. A committee reads a director rehiring someone, and giving him more, as a judgment in itself.</p>
+    </li>
+    <li>
+      <h3>Teaching</h3>
+      <p>Several programs ask writers directly about teaching potential. You have seen mine in both a graduate studio and undergraduate courses, and you have seen what I add beyond the syllabus.</p>
+    </li>
+    <li>
+      <h3>What I give back</h3>
+      <p>My statement says I want a PhD so that I can eventually run a lab where this work is taught and handed on. You can say whether I already behave that way: the internships, the letters for students, the lectures, the projects brought back to UF.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>The record, as you saw it</h2>
+  <ul class="record">
+    <li>
+      <span class="when">2019 – 2022</span>
+      <span class="what">
+        <span>MA in Digital Arts and Sciences at the Digital Worlds Institute. You taught me during the degree.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2020 – 2021</span>
+      <span class="what">
+        <span>Six hackathon wins while a student: HackaTown at Polytechnique Montréal, HackGT (IBM Challenge), VandyHacks (Google Cloud and Hardware), KnightHacks, ShellHacks, and HackViolet (Estée Lauder).</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2021 – 2022</span>
+      <span class="what">
+        <span>Research published at ACM VRST while still a master's student: HoloKeys (2021, first author) and Covid Reflections (2022). We travelled to Tsukuba, Japan, for VRST 2022 to present and represent the department.</span>
+        <span>Invited by Unity to speak with them on stage at Augmented World Expo in Silicon Valley, 2022 (“Faster Iteration in AR Using Unity”).</span>
+        <span>Director's Award, UF Digital Worlds, 2022.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2023</span>
+      <span class="what">
+        <span>Founded Augmented Info Systems, my research and development studio. You mentored me through starting it, around the time you became director.</span>
+        <span>You offered me my first teaching position that fall: DIG 6050C Entertainment Technology, a graduate VR studio of ten students. Their collaborative XR installations were exhibited with the Florida Museum of Natural History.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">2023 – 2026</span>
+      <span class="what">
+        <span>Invited lectures in the graduate program after the studio course.</span>
+        <span>My studio worked with UF on several projects, including the microelectronics training with the Florida Semiconductor Institute and the PATHS program for autistic STEM students.</span>
+        <span>Three students from the institute interned at my studio, their first roles in industry. I later wrote letters supporting their graduate applications.</span>
+      </span>
+    </li>
+    <li>
+      <span class="when">Fall 2026</span>
+      <span class="what">
+        <span>You offered a larger teaching load: three undergraduate courses (DIG 3713 Game Content Production, DIG 3873 Game Systems Development 1, DIG 4540C Production of Immersive Environments).</span>
+        <span>Alongside them I run two weekly series for the students: critical playthroughs of landmark games, and a film series with study guides on how constructed worlds are built. I also rebuilt the autograder for DIG 3873.</span>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Where your judgment counts most</h2>
+  <ul>
+    <li>A comparison. You have taught in the institute and now direct it. Where I stand among the master's students and instructors you have seen is something no one else can say. Stanford's form asks for exactly this, as a rating against a group you name.</li>
+    <li>Why a PhD now. You watched me choose industry after the master's and then mentored me through starting the studio. If you have a view on why doctoral study is the right step at this point, a committee will want it.</li>
+    <li>One or two moments you remember without being reminded. A specific scene from a class, a critique or the museum opening does more than a list of achievements.</li>
+  </ul>
+</section>
+
+<footer>
+  <p><a class="back" href="../">&larr; Back to the main page</a></p>
+  <p>The deadlines, what each school's form asks, and my papers are on <a href="../">the page for all three writers</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>
