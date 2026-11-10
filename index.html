@@ -65,16 +65,16 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-
 @media (max-width: 640px) { .writer-cards { grid-template-columns: 1fr; } }
 
 /* Date rail */
-.rail { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.rail { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); overflow: hidden; }
 .rail li { max-width: none; padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.15rem; border-left: 1px solid var(--rule); min-width: 0; }
 .rail li:first-child { border-left: 0; }
 .rail .date { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--due); font-variant-numeric: tabular-nums; }
 .rail .who { font-size: 0.9rem; }
 .rail .left { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; min-height: 1.2em; }
 @media (max-width: 640px) {
-  .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .rail li:nth-child(3) { border-left: 0; }
-  .rail li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  .rail { grid-template-columns: 1fr; }
+  .rail li { border-left: 0; }
+  .rail li:nth-child(n+2) { border-top: 1px solid var(--rule); }
 }
 
 /* Programs table */
@@ -131,7 +131,6 @@ footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rul
   <ol class="rail" aria-label="Letter deadlines">
     <li><span class="date">Dec 1</span><span class="who">Stanford, Northeastern, Berkeley, USC, NYU</span><span class="left" data-due="2026-12-01"></span></li>
     <li><span class="date">Dec 15</span><span class="who">MIT</span><span class="left" data-due="2026-12-15"></span></li>
-    <li><span class="date">Dec 16</span><span class="who">UC Santa Barbara</span><span class="left" data-due="2026-12-16"></span></li>
     <li><span class="date">Jan 6</span><span class="who">UC Santa Cruz</span><span class="left" data-due="2027-01-06"></span></li>
   </ol>
   </div>
@@ -140,7 +139,7 @@ footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rul
 <section>
   <h2>The short version</h2>
   <ul>
-    <li>I am applying to eight programs. Five letters are due December 1, 2026. The last is due January 6, 2027.</li>
+    <li>I am applying to seven programs. Five letters are due December 1, 2026. The last is due January 6, 2027.</li>
     <li>Each school sends you its own email with a personal upload link. There is no shared system, so expect one email per program.</li>
     <li>One letter can serve every program. Please put it on letterhead, sign it, and save it as a PDF, since two schools require that.</li>
     <li>Stanford, Berkeley and NYU also ask a few short rating questions in their form. Everywhere else it is an upload.</li>
@@ -183,11 +182,6 @@ footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--rul
           <td><span class="school">MIT</span><span class="prog">Media Arts and Sciences</span></td>
           <td class="due">Dec 15, 2026<br>11:59 pm ET</td>
           <td>Upload the letter. MIT asks writers to speak to research and critical-thinking skills.<span class="from">Email comes from an @mit.edu address. <strong>Request sent November 9, 2026.</strong></span></td>
-        </tr>
-        <tr>
-          <td><span class="school">UC Santa Barbara</span><span class="prog">PhD in Media Arts and Technology</span></td>
-          <td class="due">Dec 16, 2026<br>11:59 pm PT</td>
-          <td>Upload the letter.<span class="from">Email comes from gradadmissions@graddiv.ucsb.edu.</span></td>
         </tr>
         <tr>
           <td><span class="school">UC Santa Cruz</span><span class="prog">PhD in Computational Media</span></td>
